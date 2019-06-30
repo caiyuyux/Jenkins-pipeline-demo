@@ -10,12 +10,8 @@ def call() {
         stage('test') {
 		steps {
 		     ansiblePlaybook(
-		        inventory: 'local_inventory/hosts.cfg',
-		        playbook: 'cloud_playbooks/create-aws.yml',
-		        extraVars: [
-		            login: 'mylogin',
-		            secret_key: [value: 'g4dfKWENpeF6pY05', hidden: true]
-		        ])}
+		        inventory: '/var/pipeline-library/ansible/hosts',
+		        playbook: '/var/pipeline-library/ansible/tasks/main.yml'
 	}
     }
   }
