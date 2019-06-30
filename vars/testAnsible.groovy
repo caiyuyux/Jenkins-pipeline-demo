@@ -10,7 +10,7 @@ def call() {
             stage('test ansible') {
                 steps {
 
-                	withEnv(["PATH+ANSIBLE=${tool '2.4.1.0'}"]) {
+                	withEnv(["PATH+ANSIBLE=${tool 'ansible'}"]) {
 
                    	ansiblePlaybook(
                       inventory: '/var/pipeline-library/ansible/hosts',
