@@ -15,5 +15,4 @@ def call() {
                       extras: '-e project_name="some value"')}                
             }
       }
-  }
   }}
