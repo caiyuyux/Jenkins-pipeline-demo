@@ -7,10 +7,13 @@ def call() {
     agent any
 
     stages {
-            stage('构建镜像') {
+            stage('test ansible') {
                 steps {
-                    sh "mkdir ttt"
-                }
+                   ansiblePlaybook(
+                      inventory: '/var/pipeline-library/ansible/hosts',
+                      playbook: '/var/pipeline-library/ansible/tasks/main.yml',
+                      extras: '-e project_name="some value"')}                
             }
+      }
   }
   }}
