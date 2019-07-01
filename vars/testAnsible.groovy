@@ -9,10 +9,7 @@ def call() {
     stages {
             stage('test ansible') {
                 steps {
-                   	ansiblePlaybook(
-                      inventory: '/var/pipeline-library/ansible/hosts',
-                      playbook: '/var/pipeline-library/ansible/tasks/main.yml',
-                      extras: '-e project_name="some value"')  
+                   	  sh 'ansible-playbook /var/pipeline-library/ansible/tasks/main.yml -i /var/pipeline-library/ansible/hosts -e "project_name=some value"'
                     }             
                 }
             }
