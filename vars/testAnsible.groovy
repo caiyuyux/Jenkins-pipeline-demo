@@ -13,12 +13,12 @@ def call() {
             stage('test ansible') {
 
                 steps {
+                   sh 'ansible-playbook /var/pipeline-library/ansible/tasks/main.yml -i /var/pipeline-library/ansible/hosts -e "parameter=some value"'         
+
                   ansiblePlaybook( 
                           playbook: "${params.ANSIBLE_HOME}/tasks/main.yml",
                           inventory: "${params.ANSIBLE_HOME}/hosts", 
                           extras: '-e parameter="some value"')
-                      // 设置环境变量
-                       sh 'ansible-playbook /var/pipeline-library/ansible/tasks/main.yml -i /var/pipeline-library/ansible/hosts -e "parameter=some value"'         
                 }
             }
     }}
