@@ -8,8 +8,10 @@ def call() {
 
     stages {
             stage('test ansible') {
+              
+              sh 'cd /var/pipeline-library/ansible'
                 steps {
-                   	  sh 'ansible-playbook /var/pipeline-library/ansible/tasks/main.yml -i /var/pipeline-library/ansible/hosts -e "project_name=some value"'
+                   	  sh 'ansible-playbook tasks/main.yml -i hosts -e "project_name=some value"'
                     }             
                 }
             }
