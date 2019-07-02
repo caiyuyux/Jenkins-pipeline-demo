@@ -1,10 +1,9 @@
 ---
-# tasks file for ansible_demo
-- name: Print
- hosts: all
- vars:
-   project_name: ""
+- name: print
+  hosts: animal
+  vars:
+    project_name: ""
 
- tasks:
-   - name: print single project name
-     shell: echo "{{ project_name }}"
+  tasks:
+    - name: print single project name
+      shell: echo "{{ project_name }}"
