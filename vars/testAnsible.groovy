@@ -17,8 +17,8 @@ def call() {
                       // sh "export ANSIBLE_CONFIG=${params.ANSIBLE_HOME}"
                   
                       ansiblePlaybook( 
-                          playbook: "${params.ANSIBLE_HOME}/tasks/main.yml",
-                          inventory: "${params.ANSIBLE_HOME}/hosts", 
+                          playbook: "/var/pipeline-library/ansible/tasks/main.yml",
+                          inventory: "/var/pipeline-library/ansible/hosts", 
                           extras: '-e parameter="some value"')
                     }             
                 }
