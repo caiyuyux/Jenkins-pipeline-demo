@@ -9,7 +9,10 @@ def call() {
     stages {
             stage('test ansible') {
               
-              sh 'cd /var/pipeline-library/ansible'
+                steps {
+                      // 切换到 ansible 主目录
+                      sh 'cd /var/pipeline-library/ansible'
+                    }                
                 steps {
                    	  sh 'ansible-playbook tasks/main.yml -i hosts -e "project_name=some value"'
                     }             
