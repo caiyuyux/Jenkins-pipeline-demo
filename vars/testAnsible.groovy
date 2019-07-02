@@ -15,6 +15,7 @@ def call() {
                 steps {
                       // 设置环境变量
                       sh "export ANSIBLE_CONFIG=${params.ANSIBLE_HOME}"
+                      sh 'pwd'
                   
                       ansiblePlaybook( 
                           playbook: "${params.ANSIBLE_HOME}/tasks/main.yml",
