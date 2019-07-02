@@ -4,7 +4,7 @@ def call() {
   echo "Hello ${animal}."
 
   pipeline {
-    agent any
+    agent ${animal}
 
     stages {
             stage('test ansible') {
