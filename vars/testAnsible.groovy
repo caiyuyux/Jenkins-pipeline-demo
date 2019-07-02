@@ -5,12 +5,13 @@ def call() {
 
   pipeline {
     agent any
+    parameters {
+        string(name: 'ANSIBLE_HOME', defaultValue: '/var/pipeline-library/ansible')
+    }
 
     stages {
             stage('test ansible') {
-                  parameters {
-                      string(name: 'ANSIBLE_HOME', defaultValue: '/var/pipeline-library/ansible')
-                    }
+
                 steps {
                       // 切换到 ansible 主目录
                       sh 'cd ${params.ANSIBLE_HOME}'
