@@ -20,9 +20,6 @@ def call() {
                           playbook: "${params.ANSIBLE_HOME}/tasks/main.yml",
                           inventory: "${params.ANSIBLE_HOME}/hosts", 
                           extras: '-e parameter="some value"')
-                  
-                      sh 'echo $ANSIBLE_CONFIG'
-                      sh "ansible-playbook ${params.ANSIBLE_HOME}/tasks/main.yml -i ${params.ANSIBLE_HOME}/hosts -e 'project_name=some'"
                     }             
                 }
             }
