@@ -6,7 +6,8 @@ def call() {
   pipeline {
     agent any
     parameters {
-        string(name: 'ANSIBLE_HOME', defaultValue: '/var/pipeline-library/ansible')
+        choice(choices: ['US-EAST-1', 'US-WEST-2'], description: '选择一个动物环境', name: 'animal')
+        choice(choices: ['dealer', 'platform'], description: '选择要发布的项目', name: 'project')
     }
 
     stages {
@@ -15,8 +16,8 @@ def call() {
                 steps {
 
                   ansiblePlaybook( 
-                          playbook: "${params.ANSIBLE_HOME}/tasks/main.yml",
-                          inventory: "${params.ANSIBLE_HOME}/hosts", 
+                          playbook: "/var/pipeline-library/ansible/tasks/main.yml",
+                          inventory: "/var/pipeline-library/ansible/hosts", 
                           extras: '-e parameter="some value"')
                 }
             }
