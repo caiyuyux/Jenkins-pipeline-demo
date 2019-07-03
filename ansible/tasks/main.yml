@@ -1,6 +1,6 @@
 ---
 - name: print
-  hosts: "{{ animal }}"
+  hosts: "{{ host }}"
   vars:
     project_name: ""
 
