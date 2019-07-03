@@ -17,7 +17,7 @@ def call() {
                           inventory: "/var/pipeline-library/ansible/hosts", 
                           extraVars: [
                               host: "${animal}",
-                              project: "test"
+                              project: "${project}"
                     ])
                 }
             }
