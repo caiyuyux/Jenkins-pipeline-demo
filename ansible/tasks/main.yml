@@ -6,4 +6,4 @@
 
   tasks:
     - name: print single project name
-      shell: echo "{{ project_name }}"
+      shell: echo "{{ project }}"
