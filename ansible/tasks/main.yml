@@ -6,8 +6,9 @@
 
   tasks:
     - name: print single project name
-      shell: echo "{{ project }}"
-      
+      command: echo "key is:{{ project }}"
+      register: result
+
     - name: print stdout
       debug:
-        msg: ""
+        msg: "{{ result }}"
