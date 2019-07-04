@@ -1,20 +1,19 @@
 #!/usr/bin/env groovy
 
-def projects = ["java_base", "java_api"]
-def parallelStagesMap = projects.collectEntries {
-  ["${it}" : generateStage(it)]
-}
+def call() {
 
-def generateStage(project) {
-  return {
-    stage("stage: ${project}") {
-      sh script: "sleep 15"
+  def p = [$project]
+  def parallelStagesMap = p.collectEntries {
+  ["${it}" : generateStage(it)]
+  }
+
+  def generateStage(project) {
+    return {
+      stage("stage: ${project}") {
+        sh script: "sleep 15"
+      }
     }
   }
-}
-
-
-def call() {
 
   pipeline {
     agent any
