@@ -25,7 +25,7 @@ def call() {
 
     stages {
 
-      echo "准备开始初始化 SIT. 初始化动物:${animal}."
+      // echo "准备开始初始化 SIT. 初始化动物:${animal}."
 
       stage('Checkout') {
 
