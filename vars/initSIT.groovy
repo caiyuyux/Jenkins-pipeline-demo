@@ -29,9 +29,9 @@ def call() {
 
       stage('Checkout') {
 
-        echo '初始化新分支: ${branch}'
-
         steps {
+
+          echo '初始化新分支: ${branch}'
           script {
             parallel parallelStagesMap
           }
@@ -41,7 +41,7 @@ def call() {
 
       stage('InitTapd') {
 
-        echo '修改 Tapd '
+        // echo '修改 Tapd '
         // 爬虫
 
       }
