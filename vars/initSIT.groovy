@@ -39,16 +39,16 @@ def call() {
 
       }
 
-      stage('InitTapd') {
+      // stage('InitTapd') {
 
-        // echo '修改 Tapd '
-        // 爬虫
+      //   // echo '修改 Tapd '
+      //   // 爬虫
 
-      }
+      // }
 
-      stage('Ansible') {
+      // stage('Ansible') {
 
-      }
+      // }
 
       stage('构建项目') {
 
