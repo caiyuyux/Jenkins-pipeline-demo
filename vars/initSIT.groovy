@@ -52,7 +52,7 @@ def call() {
 
       stage('构建项目') {
 
-        env.PATH = "${mvnHome}/bin:${env.PATH}"
+        // env.PATH = "${mvnHome}/bin:${env.PATH}"
 
 
         // 并行
